@@ -1,0 +1,44 @@
+{{>original}}
+    <section id="jobApplicationForm" style="display:flex;justify-content:center">
+      <hr>
+      <form action="submission" method="POST" class="jobApplicationForm">
+				<h1>Apply a job here</h1>
+        <h1>{{job_id}}</h1>
+        <br>
+        <section class="question">
+          <label for="patty">{{question1}}</label>
+    			<textarea type="text" name="question1" id="question2"></textarea>
+        </section>
+        <hr>
+        
+        <section class="question">
+          <label for="amount">{{question2}}</label>
+    	    <textarea type="text" name="question2" id="question2"></textarea>
+        </section>
+        <hr>
+        
+        <section class="question">
+          <label for="doneness">{{question3}}</label>
+        	<textarea type="text" name="question3" id="question3"></textarea>
+        </section>
+        <hr>
+
+        <section class="question">
+          <label for="doneness">{{question4}}</label>
+        	<textarea type="text" name="question4" id="question4"></textarea>
+        </section>
+        <hr>
+
+        <section class="question">
+          <label for="doneness">{{question5}}</label>
+        	<textarea type="text" name="question5" id="question5"></textarea>
+        </section>
+        <hr>
+        
+
+        <section class="submission">
+          <input type="submit" value="Submit">
+        </section>
+      </form>
+    </section>
+{{copyright}}

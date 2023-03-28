@@ -1,0 +1,101 @@
+{{>original}}
+<br>
+<div class="firstRowOfJobPage">    
+
+    <div class="impactFinderInfoDiv" id="impactFinderInfo">
+        <span style="font-size:50px;  margin-right: 15px;">{{profile.[0].[0].finder_name}}</span>
+        {{#if profile.[0].[0].vetted}}
+        <i class="fas fa-check vetted"></i>
+        {{/if}}
+    </div>
+    <div class="impactFinderInfoDiv" id="impactFinderInfo"></div>
+        {{#if userData.seeker_id}}
+        <button class="connectButton" type="button" style="margin-left:10px" data-bs-toggle="modal" data-bs-target="#modalConnect">Connect</button>
+        {{/if}}
+    </div>
+    
+</div>
+{{!-- ==============Connect Modal==================== --}}
+            <div class="modal fade" id="modalConnect" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabelConnect">Send your profile to this Finder</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Click on send to share your name and Align profile with the Finder. Only the Finder who posted this Job is able to see that you have connected. Other Finders and other Seekers will not be able to see that you have responded to this job. 
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button id="connectButtonSend" data-id={{profile.[0].[0].job_id}} type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalConnect">Add </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="infoDiv">
+    <div class="container-fluid jobPage">
+    <div class="row">
+        {{#if isCurrentUserBoolean}}
+                    <div class="col-8 impactFinderJobCurrent profileInfo" id="FinderInfo">
+                        <h2>Company information</h2>
+                        <hr>
+                        <p>{{profile.[0].[0].finder_description}}</p>
+                        <p style="display:inline-block;width:100px">Size:</p>
+                        {{profile.[0].[0].finder_size}}
+                        <br>
+                        <p style="display:inline-block;width:100px">Telephone:</p>
+                        {{profile.[1].[0].telephone_number}}
+                        <br>
+                        <p style="display:inline-block;width:100px">Mobile:</p>
+                        {{profile.[1].[0].mobile_number}}
+                        <br>
+                        <p style="display:inline-block;width:100px">Email:</p>
+                        {{profile.[1].[0].email}}
+                        <br>
+                    </div>
+                    <div class="col-3 impactFinderJobCurrent">
+                        <h2>Interested Seekers</h2>
+                        <hr>
+                        {{#each profile.[2]}}
+                        <div>
+                        <a href="/seekerprofile/{{this.seeker_id}}"><p>{{this.seeker_first_name}} {{this.seeker_surname}}</p></a>
+                        </div>
+                        {{/each}}
+                    </div>
+        {{else}}
+            <div class="impactFinderJob profileInfo" id="FinderInfo">
+                    <h2>Company information</h2>
+                    <hr>
+                    <p>{{profile.[0].[0].finder_description}}</p>
+                    <p style="display:inline-block;width:100px">Size:</p>
+                    {{profile.[0].[0].finder_size}}
+                    <br>
+                    <p style="display:inline-block;width:100px">Telephone:</p>
+                    {{profile.[1].[0].telephone_number}}
+                    <br>
+                    <p style="display:inline-block;width:100px">Mobile:</p>
+                    {{profile.[1].[0].mobile_number}}
+                    <br>
+                    <p style="display:inline-block;width:100px">Email:</p>
+                    {{profile.[1].[0].email}}
+                    <br>
+            </div>
+        {{/if}}
+    </div>         
+    </div>
+    <br>
+    <div class="impactFinderJob">
+        <h2>Role information</h2>
+        <hr>
+        <div class="jobDescription">
+            <p>{{profile.[0].[0].job_description}}</p> 
+        </div>
+    </div>
+</div>
+
+    
+{{>copyright}}

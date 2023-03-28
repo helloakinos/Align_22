@@ -1,0 +1,52 @@
+{
+  "name": "align",
+  "version": "1.0.0",
+  "description": "Hello Team!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helloakinos/align.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helloakinos/align/issues"
+  },
+  "homepage": "https://github.com/helloakinos/align#readme",
+  "dependencies": {
+    "@azure/msal-node": "^1.7.0",
+    "assert-plus": "^1.0.0",
+    "axios": "^0.26.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "bunyan": "^1.8.15",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^6.0.3",
+    "express-session": "^1.17.2",
+    "knex": "^1.0.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.2.8",
+    "morgan": "^1.10.0",
+    "node-sass": "^7.0.1",
+    "passport": "^0.5.2",
+    "passport-azure-ad": "^4.3.1",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.7.3",
+    "supertest": "^6.2.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "jest": "^27.5.1"
+  }
+}

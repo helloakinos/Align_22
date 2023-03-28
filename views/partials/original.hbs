@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-xl sticky-top">
+  <a href="/" class="navbar-brand logo">ALIGN</a>
+  <button
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    class="navbar-toggler"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aeia-label="Toggle navigation"
+  >
+    <img src="/img/Hamburger_icon.png" alt="" width="30" />
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <a href="/" class="nav-link">
+        <li class="nav-item active pagename">
+          Home
+        </li>
+      </a>
+      <a href="/impactFinderPreview" class="nav-link">
+        <li class="nav-item active pagename">
+          Impact Finder
+        </li>
+      </a>
+      <a href="/jobBoard" class="nav-link">
+        <li class="nav-item active pagename">
+          Job Board
+        </li>
+      </a>
+      <a href="/impactSeekerPreview" class="nav-link">
+        <li class="nav-item active pagename">
+          Impact Seeker
+        </li>
+      </a>
+      {{! loginstatus }}
+      {{#if isGuest}}
+        <a href="/loginSignup" class="nav-link">
+          <li class="nav-item active pagename">
+            Login/Signup
+          </li>
+        </a>
+      {{else}}
+        {{#if userData.finder_id}}
+          <a href="/finderprofile/{{userData.finder_id}}" class="nav-link">
+            <li class="nav-item active pagename">
+              My Profile
+            </li>
+          </a>
+        {{/if}}
+        {{#if userData.seeker_id}}
+          <a href="/seekerprofile/{{userData.seeker_id}}" class="nav-link">
+            <li class="nav-item active pagename">
+              My Profile
+            </li>
+          </a>
+        {{/if}}
+        <a href="/logout" class="nav-link">
+          <li class="nav-item active pagename" id="logoutbutton">
+            Logout
+          </li>
+        </a>
+      {{/if}}
+
+      {{!-- {{#unless isGuest}}
+      <a href="/loginSignup" class="nav-link">
+          <li class="nav-item active pagename">
+            Login/Signup
+          </li>
+        </a>
+      {{else}}
+        <a href="/finderprofile/4" class="nav-link">
+          <li class="nav-item active pagename">
+            My Profile
+          </li>
+        </a>
+        <a href="/logout" class="nav-link">
+          <li class="nav-item active pagename" id="logoutbutton">
+            Logout
+          </li>
+        </a>  
+      {{/unless}} --}}
+    </ul>
+  </div>
+
+</nav>

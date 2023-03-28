@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+body {
+  background-image: url("img/background.jpg");
+  background-size: cover;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+label {
+  display: inline-block;
+  font-size: 30px;
+}
+
+textarea {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  float: right;
+  margin-right: 5px;
+}
+/* NAVBAR */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+}
+.nav-link,
+.nav-link:hover {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffb545;
+  margin-right: 25px;
+  text-align: center;
+}
+
+.nav-item {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffb545;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-toggler {
+  background-color: #ffb545;
+}
+
+/* LOGO */
+.logo,
+.logo:hover {
+  font-size: 50px;
+  color: #228478;
+  font-weight: bolder;
+  font-family: "Poppins";
+  margin-left: 15px;
+}
+
+.pagename:hover {
+  background-color: white;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+/* COPYRIGHT */
+.copyright {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* HomePage Carousell */
+.carousel-item {
+  width: 100%;
+  height: 80%;
+  z-index: -1;
+}
+
+img {
+  object-fit: cover;
+}
+
+.heading {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.signUpButtonDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.signupButton {
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 2px;
+  width: fit-content;
+}
+.loginpageDiv {
+  padding: 15px;
+  border: 10px solid #526f92;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.loginPage {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.loginHeading {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.fa-brands {
+  /* margin-top:5px; */
+  padding: 15px;
+}
+
+.hide {
+  display: none;
+}
+
+/* CompanyPreview  */
+.image {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.description--blur {
+  backdrop-filter: blur(3px);
+}
+
+.description:hover {
+  opacity: 1;
+}
+
+.firstRowOfFinderProfile,
+.firstRowOfSeekerProfile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 5%;
+}
+
+.firstRowOfJobPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 5%;
+}
+
+.infoDiv{
+  margin: 0 5%;
+}
+
+.impactFinderInfoDiv {
+  display: flex;
+  align-items: baseline;
+}
+
+.impactFinderDiv,
+.impactSeekerDiv {
+  font-size: 50px;
+  padding: 0px;
+  display: inline-block;
+}
+
+#joblist {
+  display: flex;
+}
+
+#connectButton {
+  font-size: 20px;
+  font-weight: bold;
+  background: #ffb545;
+  color: #07665b;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+}
+
+.impactSeekerName {
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 5%;
+  padding: 0px;
+  display: flex;
+}
+
+.impactFinder,
+.impactSeeker {
+  margin: 0 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.impactFinderInfo {
+  margin-top: 30px;
+  height: 60%;
+  width: 45%;
+}
+
+.impactSeekerInfo {
+  margin-top: 30px;
+  height: 60%;
+  width: 45%;
+}
+
+.impactFinderInfoLeft,
+.impactFinderInfoRight,
+.impactSeekerInfoLeft,
+.impactSeekerInfoRight {
+  border: 5px solid #07665b;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.impactFinderJob {
+  border: 5px solid #07665b;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#impactFinderJob {
+  margin: 0 5%;
+  border: 5px solid #07665b;
+  border-radius: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#impactFinderJob {
+  margin: 0 5%;
+  border: 5px solid #07665b;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.impactFinderJobCurrent {
+  margin: 0 1%;
+  border: 5px solid #07665b;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.submitButton {
+  margin-top: 5px;
+  justify-self: end;
+}
+
+.reviews {
+  display: flex;
+  justify-content: center;
+}
+
+.reviewElement {
+  margin: 15px;
+  padding: 10px;
+  width: 30%;
+  text-align: center;
+}
+
+#jobApplicationForm {
+  margin-top: 30px;
+}
+
+.jobApplicationForm {
+  border: 10px solid #526f92;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.question,
+.submission {
+  display: flex;
+  justify-content: center;
+}

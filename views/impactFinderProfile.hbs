@@ -1,0 +1,290 @@
+{{>original}}
+<br>
+<div class="firstRowOfFinderProfile">    
+    <div class="impactFinderDiv" id="impactFinderName">
+        {{profile.[0].finder_name}}
+        {{#if profile.[0].vetted}}
+            <i class="fas fa-check vetted"></i>
+        {{/if}}
+    </div>
+    {{!-- <div class="impactFinderDiv">
+        <button id="connectButton">Connect with Impact Finder</button>
+    </div> --}}
+</div>
+<div class="impactFinder">
+    <div class="impactFinderInfo">
+        <div class="impactFinderInfoLeft">
+            {{!-- <h3 style="display:inline-block">{{finder_name}}</h3> --}}
+            {{#if isCurrentUserBoolean}}
+                <div id="changebutton">
+                    {{#if profile.[0].finder_name}}
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+                            Edit
+                        </button>  
+                    {{else}}
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Create
+                        </button> 
+                    {{/if}} 
+                </div>
+            {{/if}}
+            {{!-- Edit Form --}}
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Edit your profile</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form id="saveProfile">
+                            <div class="modal-body">
+                                <label for="impactFinderInfo">Name</label>
+                                <br>
+                                <input type="text" name="impactFinderName" value="{{profile.[0].finder_name}}" required></textarea>
+                                <br>
+                                <label for="impactFinderInfo">Information</label>
+                                <br>
+                                <textarea type="text" name="impactFinderInfo" required>{{profile.[0].finder_description}}</textarea>
+                                <br>
+                                <label for="impactFinderSize">Impact Finder Size</label>
+                                <br>
+                                <input type="number" name="impactFinderSize" id="impactFinderSize" value="{{profile.[0].finder_size}}">
+                                <br>
+                                <label for="impactFinderPhone">Telephone</label>
+                                <br>
+                                <input type="number" name="impactFinderPhone" minlength="8" maxlength="8" value="{{profile.[0].telephone_number}}"required></input>
+                                <br>
+                                <label for="impactFinderPhone">Mobile</label>
+                                <br>
+                                <input type="number" name="impactFinderMobile" minlength="8" maxlength="8" value="{{profile.[0].mobile_number}}"required></input>
+                                <br>
+                                <label for="impactFinderEmail">Email</label>
+                                <br>
+                                <input type="text" name="impactFinderEmail" value="{{profile.[0].email}}" required></input>
+                                <br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <div id="bottomButton">
+                                    {{#if profile.[0].finder_description}}
+                                        <button data-bs-dismiss="modal"  class="btn btn-primary" id="SaveProfileEdits">Save</button>
+                                    {{else}}
+                                        <button data-bs-dismiss="modal" class="btn btn-primary" id="CreateProfileEdits">Create</button>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {{!-- Edit Form --}}
+            <div class="profileInfo" id="FinderInfo">
+                <h2>Basic information</h2>
+                <hr>
+                <p>{{profile.[0].finder_description}}</p>
+                <p style="display:inline-block;width:100px">Size:</p>
+                {{profile.[0].finder_size}}
+                <br>
+                <p style="display:inline-block;width:100px">Telephone:</p>
+                {{profile.[0].telephone_number}}
+                <br>
+                <p style="display:inline-block;width:100px">Mobile:</p>
+                {{profile.[0].mobile_number}}
+                <br>
+                <p style="display:inline-block;width:100px">Email:</p>
+                {{profile.[0].email}}
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="impactFinderInfo">
+        <div class="impactFinderInfoRight">
+            {{#if isCurrentUserBoolean}}
+                <div id="customFieldButton">
+                    {{#if profile.[1]}}
+                        <button type="button" class="editcustomfinder btn bg-light" data-bs-toggle="modal" data-bs-target="#modalCustomfieldsEdit">edit</button>
+                    {{/if}}
+                    {{#if profile.[0]}}
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCustomfields" style="float:right;">
+                        Add
+                    </button>
+                    {{else}}
+                    <span style="float:right;">Please create a profile first.</span>
+                    {{/if}}
+                </div> 
+            {{/if}}
+            <h2 id="customFieldName" >More About {{profile.[0].finder_name}}</h2>
+            <hr>
+              {{!-- =============add customfield modal========== --}}
+            <div class="modal fade" id="modalCustomfields" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Tell us more about you</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="finderCustomField">
+                                <h5 style="display:inline-block">Click 'add' to add an additional field to your profile</h5>
+                                <br>
+                                <label for="customeFill">
+                                    <input type="text" id="customFillTitle" name="customFillTitle" placeholder="Custom Title">
+                                </label>
+                                <br>
+                                <textarea type="text" name="customFillText" placeholder="Your text here" required style="margin-top:5px"></textarea> 
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button id="SaveFinderCustomField" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCustomfields">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- =============edit customfield modal========== --}}
+            <div class="modal fade" id="modalCustomfieldsEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabelEdit">Edit your custom profile field</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="finderCustomFieldEdit">
+                                <h5 style="display:inline-block">Click 'edit' to change the fields on your profile</h5>
+                                <br>
+                                <div id="customFieldEdit">
+                                    {{#each profile.[1]}}
+                                        <div class="customfielddiv" data-id="{{customfield_id}}">
+                                            <input type="text" class="customFillTitleEdit" name="customFillTitleEdit" value="{{customfield_title}}">
+                                            <br>
+                                            <textarea type="text" class="customFillTitleEdit" name="customFillTextEdit" required>{{customfield_content}}</textarea>
+                                            <button type="button" class="removecustomfinder btn bg-light" data-id="{{customfield_id}}">remove</button>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button id="editFinderCustomField" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCustomfieldsEdit">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                {{!-- ============= customfield data========== --}}
+            <div id="FinderCustomField">
+                {{#each profile.[1]}}
+                    <div style="margin-bottom:10px">
+                        <h4>{{customfield_title}}</h4>
+                        <p>{{customfield_content}}</p>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+
+
+
+
+
+
+
+
+<div id="impactFinderJob">
+    {{#if isCurrentUserBoolean}}
+        <div id="jobButton">
+            {{#if profile.[2]}}
+                <button type="button" class="editjob btn bg-light" data-bs-toggle="modal" data-bs-target="#modaljobBoardEdit">edit</button>
+            {{/if}}
+            {{#if profile.[0]}}
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaljobBoard">
+            Add
+            </button>  
+            {{else}}
+            <span style="float:right;">Please create a profile first.</span> 
+            {{/if}}  
+        </div>
+    {{/if}}
+
+    <h2>Job Board</h2>
+    <hr>
+        {{!-- =============add job modal========== --}}
+    <div class="modal fade" id="modaljobBoard" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaljobBoardLabel">Add your job post(s) here</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="finderJobPost">
+                        <h5 style="display:inline-block">Click 'add' to add a new job post to your profile</h5>
+                        <br>
+                        <input type="text" name="newJobTitle" placeholder="Job Title">
+                        <br>
+                        <input type="text" name="newJobLocation" placeholder="Location" style="margin-top:5px">
+                        <br>
+                        <textarea type="text" name="newJobDetails" placeholder="Job Details" required  style="margin-top:5px"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button id="SaveFinderJobPost" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaljobBoard">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        {{!-- =============edit job modal========== --}}
+    <div class="modal fade" id="modalJobBoardEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalJobBoardEdit">Edit your job post here</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="finderJobPost">
+                        <div id="jobBoardEdit">
+                            {{#each profile.[2]}}
+                                <div class="jobPostdiv" data-id="{{job_id}}">
+                                    <input type="text" class="jobTitleEdit" name="jobTitleEdit" value="{{job_title}}">
+                                    <input type="text" class="jobTitleEdit" name="jobLocationEdit" value="{{location}}">
+                                    <br>
+                                    <textarea type="text" class="jobTextEdit" name="jobTextEdit" required>{{job_description}}</textarea>
+                                    <button type="button" class="removeJobPost btn bg-light" data-id="{{job_id}}">remove</button>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button id="editJobPost" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaljobBoardEdit">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- job data --}}
+    <div id="jobList">
+        {{#each profile.[2]}}
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <div class="card">
+                    {{!-- Edit this --}}
+                    <a href="/jobPage/{{this.finder_id}}">
+                        <img src="/img/dummypic{{job_id}}.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">{{job_title}}</h3>
+                            <p class="cardtext">location: {{location}}</p>
+                            <p class="cardtext">{{job_description}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+{{>copyright}}

@@ -1,0 +1,91 @@
+{{>original}}
+<div class="container">
+    <div class="row">
+
+        {{#each allJobs}}
+           <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <a href="/jobPage/{{this.finder_id}}">
+                    {{!-- <a href="/jobApplicationForm"></a> --}}
+                        <img src="img/dummypic{{job_id}}.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{job_title}}</h5>
+                            <h5>{{finder_name}}</h5>
+                            <h5>{{location}}</h5>
+                            <p class="cardtext">{{job_description}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {{/each}}
+
+        {{!-- <div class="col-4">
+            <div class="card">
+                <a href="/jobApplicationForm">
+                    <img src="img/dummypic1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+                        <h5>{{finder_name}}</h5>
+                        <p class="cardtext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum earum laudantium modi voluptatum magnam natus laborum, odit eum, aut placeat assumenda iure accusantium ratione quam laboriosam. Distinctio recusandae officiis molestias.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-4">
+                <div class="card">
+                    <a href="/jobApplicationForm">
+                    <img src="img/dummypic2.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="cardtext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum earum laudantium modi voluptatum magnam natus laborum, odit eum, aut placeat assumenda iure accusantium ratione quam laboriosam. Distinctio recusandae officiis molestias.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-4">
+                <div class="card">
+                    <a href="/jobApplicationForm">
+                    <img src="img/dummypic3.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="cardtext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum earum laudantium modi voluptatum magnam natus laborum, odit eum, aut placeat assumenda iure accusantium ratione quam laboriosam. Distinctio recusandae officiis molestias.</p>
+                    </div>
+                    </a>
+                </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                    <a href="/jobApplicationForm">
+                    <img src="img/dummypic1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="cardtext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum earum laudantium modi voluptatum magnam natus laborum, odit eum, aut placeat assumenda iure accusantium ratione quam laboriosam. Distinctio recusandae officiis molestias.</p>
+                    </div>
+                    </a>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <a href="/jobApplicationForm">
+                <img src="img/dummypic2.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Title</h5>
+                    <p class="cardtext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum earum laudantium modi voluptatum magnam natus laborum, odit eum, aut placeat assumenda iure accusantium ratione quam laboriosam. Distinctio recusandae officiis molestias.</p>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                  <a href="/jobApplicationForm">
+                <img src="img/dummypic3.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Title</h5>
+                    <p class="cardtext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum earum laudantium modi voluptatum magnam natus laborum, odit eum, aut placeat assumenda iure accusantium ratione quam laboriosam. Distinctio recusandae officiis molestias.</p>
+                </div>
+                </a>
+            </div>
+        </div> --}}
+    </div>
+</div>
+{{>copyright}}

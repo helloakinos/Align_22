@@ -1,0 +1,13 @@
+{{>original}}
+
+<div class="container-fluid">
+    <div class="row">
+        {{#each allSeekers}}
+                <div class="col-lg-3 col-md-6 col-sm-6 image">
+                    <img src="img/dummypic{{this.seeker_id}}.jpg" class="img-fluid" alt="">
+                    <a href="/seekerprofile/{{this.seeker_id}}"><div class="description description--blur">{{this.first_name}} {{this.surname}}</div></a>
+                </div>
+        {{/each}}
+    </div>
+</div>
+{{>copyright}}

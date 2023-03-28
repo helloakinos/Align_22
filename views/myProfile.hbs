@@ -1,0 +1,31 @@
+{{>original}}
+{{!-- {{#if isLoggedInFinder}} --}}
+<form action="/finderprofile" method="put" id="saveProfile">
+        <label for="impactFinderInfo">{{finder_name}} information</label>
+        <br>
+        <textarea type="text" name="impactFinderInfo" required>{{finder_description}}</textarea>
+        <br>
+        <label for="small">Impact Finder Size</label>
+        <br>
+        <input type="radio" name="impactFinderSize" id="small" value="Small">
+        <label for="small">Small</label>
+
+        <input type="radio" name="impactFinderSize" id="medium" value="Medium">
+        <label for="medium">Medium</label>
+        <input type="radio" name="impactFinderSize" id="large" value="Large">
+        <label for="large">Large</label>
+        <br>
+        <label for="impactFinderPhone">Phone: </label>
+        <input type="text" name="impactFinderPhone" placeholder="phone" value="{{telephone_number}}"required style="margin-bottom:5px;padding:5px"></textarea>
+        <br>
+        <label for="impactFinderPhone">Mobile: </label>
+        <input type="text" name="impactFinderPhone" placeholder="phone" value="{{mobile_number}}"required style="margin-bottom:5px;padding:5px"></textarea>
+        <br>
+        <label for="impactFinderEmail">Email:</label>
+        <input type="text" name="impactFinderEmail" placeholder="email" value="{{email}}" required style="margin-bottom:5px;padding:5px"></textarea>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Save">
+</form>
+{{!-- {{/if}} --}}
+
+{{>copyright}}
